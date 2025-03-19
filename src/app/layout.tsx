@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["400"], variable: "--font-poppins" });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-poppins" });
 const luckiest = Luckiest_Guy({ subsets : ["latin"], weight: ["400"], variable: "--font-luckiest"})
 
 export const metadata: Metadata = {
