@@ -10,29 +10,31 @@ import { Button } from "./ui/button";
 import { AppWindow } from "lucide-react";
 import { FeaturesAnnoucementData, AnnoucementType } from "@/lib";
 
-const Data = { FeaturesAnnoucementData }
+const Data : AnnoucementType[] = FeaturesAnnoucementData
 
 export default function Hero() {
   return (
     <div className="flex flex-col py-24 min-h-screen text-white">
       <h2 className="text-4xl font-bold mb-12">Features & Update Annoucement !</h2>
       <div>
-        <Carousel>
-          <CarouselContent>
-            <CarouselItem className="md:basis-1/2 overflow-hidden rounded-4xl border border-gray-800">
-              <div className="flex flex-col">
-                <div className="relative w-full h-48">
-                   <Image src="/png/CarClove.png" alt="Clove" fill className="object-cover overflow-hidden"/>
+        <Carousel className="w-full">
+          <CarouselContent className="gap-4 w-full ">
+            {Data.map((item) => (
+                <CarouselItem key={item.id} className="md:basis-1/2 w-full p-0 rounded-4xl overflow-hidden border border-gray-800">
+                <div className="flex flex-col h-full">
+                  <div className="relative w-full h-48">
+                     <Image src={item.image} alt="Clove" fill className="object-cover overflow-hidden"/>
+                  </div>
+                  <div className="flex grow px-6 py-2 bg-gray-950 gap-6">
+                      <h2 className="text-2xl font-semibold w-full">{item.title}</h2>
+                      <div className="flex flex-col">
+                        <h2 className="text-lg font-semibold">{item.date}</h2>
+                        <h2 className="text-sm text-gray-300">{item.desc}</h2>
+                      </div>
+                  </div>
                 </div>
-                <div className="flex px-2 py-2 bg-gray-950 gap-6">
-                    <h2 className="text-2xl font-semibold w-full">Smuggler Only 2 People</h2>
-                    <div className="flex flex-col">
-                      <h2 className="text-lg font-semibold">30 November 2025</h2>
-                      <h2 className="text-sm text-gray-300">Ini adalah Bagian dari Fitur Paling di Minati Di Legacy Roleplay Dengan Experience menebang Pohon, Selayaknya Pekerja Lumber</h2>
-                    </div>
-                </div>
-              </div>
-            </CarouselItem>
+              </CarouselItem>
+            ))}
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
@@ -65,8 +67,8 @@ export default function Hero() {
             </div>
          </div>
        </div>  
-       <div className="relative flex items-center justify-center bg-pink-400 basis-1/2">
-          <h2>Testing</h2>
+       <div className="relative flex items-center justify-center basis-1/2">
+          <Image src="/png/testing.png" alt="Laptop" className="scale-125 -rotate-6 -translate-y-5" width={700} height={700}/>
        </div>
       </div>
     </div>
