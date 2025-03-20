@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Luckiest_Guy, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
+import { cn } from "@/lib/utils";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-poppins" });
-const luckiest = Luckiest_Guy({ subsets : ["latin"], weight: ["400"], variable: "--font-luckiest"})
 
 export const metadata: Metadata = {
   title: "Legacy Roleplay",
@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${luckiest.variable}`}>
-      <body className={` antialiased bg-yellow-50`}>
+    <html lang="en" className='h-full scrollbar scrollbar-thumb-zinc-500 scrollbar-track-zinc-700'>
+      <body className={cn('antialiased', poppins.className)}>
         <Navbar/>
         {children}
         <Footer/>

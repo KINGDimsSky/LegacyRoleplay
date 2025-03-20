@@ -1,4 +1,4 @@
-import { cn } from "@/lib"
+import { cn } from "@/lib/utils"
 import React from "react"
 
 export default function MaxWidthWrapper ({children, className} : {children : React.ReactNode, className ?: string}) {
