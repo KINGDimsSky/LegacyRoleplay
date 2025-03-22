@@ -14,8 +14,8 @@ const Data : AnnoucementType[] = FeaturesAnnoucementData
 
 export default function Hero() {
   return (
-    <div className="flex flex-col py-24 min-h-screen text-white">
-      <h2 className="text-4xl font-bold mb-12">Features & Update Annoucement !</h2>
+    <div className="flex flex-col py-20 min-h-screen text-white items-center">
+      <h2 className="text-4xl font-semibold tracking-tight mb-12">Features & Update Annoucement !</h2>
       <div>
         <Carousel className="w-full">
           <CarouselContent className="gap-4 w-full ">
