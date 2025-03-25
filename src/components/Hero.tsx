@@ -1,13 +1,7 @@
 import Image from "next/image";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "./ui/carousel";
+import { Carousel, CarouselContent, CarouselItem,  CarouselNext,  CarouselPrevious } from "./ui/carousel";
 import { Button } from "./ui/button";
-import { AppWindow } from "lucide-react";
+import { AppWindow, Download, Smartphone } from "lucide-react";
 import { FeaturesAnnoucementData, AnnoucementType } from "@/lib";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 
@@ -17,12 +11,12 @@ export default function Hero() {
   return (
     <MaxWidthWrapper>
       <div className="flex flex-col py-20 min-h-screen text-white">
-      <h2 className="text-4xl text-center font-semibold tracking-tight mb-12">Features & Update Annoucement !</h2>
+      <h2 className="text-5xl text-center font-bold tracking-tighter mb-12">Features & Update Annoucement !</h2>
       <div>
         <Carousel className="w-full">
-          <CarouselContent className="gap-4 w-full ">
+          <CarouselContent className="gap-4 w-full">
             {Data.map((item) => (
-                <CarouselItem key={item.id} className="md:basis-1/2 w-full p-0 rounded-4xl overflow-hidden border border-gray-800">
+                <CarouselItem key={item.id} className="md:basis-1/2 w-full p-0 rounded-4xl overflow-hidden border border-gray-800 cursor-pointer">
                 <div className="flex flex-col h-full">
                   <div className="relative w-full h-48">
                      <Image src={item.image} alt="Clove" fill className="object-cover overflow-hidden"/>
@@ -48,8 +42,9 @@ export default function Hero() {
          <h2 className="w-4/5 text-base text-gray-400">Anda Dapat Mengunduh SAMP Secara gratis untuk Windows Dan Android</h2>
          <div className="flex flex-col px-4 mt-12">
             <h2 className="text-4xl font-semibold">Persyaratan Sistem</h2>
-            <div className="flex gap-2 mt-6">
+            <div className="flex gap-4 mt-6">
               <Button className="cursor-pointer py-4 rounded-4xl bg-white text-black">Windows <AppWindow style={{width: "25px", height: "25px"}}/></Button>
+              <Button className="cursor-pointer py-4 rounded-4xl bg-white text-black">Android <Smartphone style={{width: "25px", height: "25px"}}/> </Button>
             </div>
             <div className="flex justify-between  mt-8">
              <div className="flex flex-col text-lg text-gray-400 gap-4">
@@ -67,6 +62,7 @@ export default function Hero() {
                <h2>12 GB Free</h2>
              </div>
             </div>
+            <Button className="mt-6 cursor-pointer mr-6 flex items-center py-8 bg-white text-black rounded-4xl"><p className="text-2xl">Get Started</p> <Download style={{width: "25px", height: "25px"}}/> </Button>
          </div>
        </div>  
        <div className="relative flex items-center justify-center basis-1/2">
@@ -75,6 +71,5 @@ export default function Hero() {
       </div>
     </div>
     </MaxWidthWrapper>
-   
   );
 }

@@ -42,7 +42,6 @@ export default function Home() {
       <PlayerInfo />
       <CreditSection/>
     </div>
-    <Footer/>
     </>
   );
 }
