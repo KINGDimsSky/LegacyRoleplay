@@ -9,13 +9,15 @@ import {
 import { Button } from "./ui/button";
 import { AppWindow } from "lucide-react";
 import { FeaturesAnnoucementData, AnnoucementType } from "@/lib";
+import MaxWidthWrapper from "./MaxWidthWrapper";
 
 const Data : AnnoucementType[] = FeaturesAnnoucementData
 
 export default function Hero() {
   return (
-    <div className="flex flex-col py-20 min-h-screen text-white items-center">
-      <h2 className="text-4xl font-semibold tracking-tight mb-12">Features & Update Annoucement !</h2>
+    <MaxWidthWrapper>
+      <div className="flex flex-col py-20 min-h-screen text-white">
+      <h2 className="text-4xl text-center font-semibold tracking-tight mb-12">Features & Update Annoucement !</h2>
       <div>
         <Carousel className="w-full">
           <CarouselContent className="gap-4 w-full ">
@@ -72,5 +74,7 @@ export default function Hero() {
        </div>
       </div>
     </div>
+    </MaxWidthWrapper>
+   
   );
 }
