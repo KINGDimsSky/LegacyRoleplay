@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-
     const router = useRouter()
 
     const LoginHandler = (e: any) => {

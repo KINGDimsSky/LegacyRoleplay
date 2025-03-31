@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import { User } from "lucide-react";
 import Link from "next/link";
 export default function Navbar() {
-
   const route = useRouter()
 
   return (
